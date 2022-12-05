@@ -18,6 +18,7 @@ gem "tzinfo-data"
 gem "haml-rails"
 gem "html2haml"
 gem "standardrb", group: [:development, :test]
+gem "tailwindcss-rails"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
