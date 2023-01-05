@@ -9,11 +9,51 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body class="bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 bg-no-repeat">
     <main>
     <% if user_signed_in? %>
+    <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+    <div class="flex justify-between items-center ">
+      <span class="text-2xl font-[Poppins] cursor-pointer">
+        <img class="h-10 inline"
+          src="https://tailwindcss.com/_next/static/media/social-square.b622e290e82093c36cca57092ffe494f.jpg">
+        tailwind
+      </span>
+
+      <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+      </span>
+    </div>
+
+    <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">SERVICE</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">ABOUT</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">CONTACT</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">BLOG'S</a>
+      </li>
+
+      <button class="bg-cyan-400 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded ">
+        Get started
+      </button>
+<h2 class=""></h2>
+    </ul>
+  </nav>
+
+
     <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="Openbar()">
     <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
   </span>
@@ -82,6 +122,10 @@
 
     function Openbar() {
       document.querySelector('.sidebar').classList.toggle('left-[-300px]')
+    }
+    function Menu(e){
+      let list = document.querySelector('ul');
+      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
     }
   </script>
   </body>
