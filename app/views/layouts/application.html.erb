@@ -34,82 +34,106 @@
       <div class="flex-none lg:block">
         <ul class="menu menu-horizontal">
           <!-- Navbar menu content here -->
+          	
         </ul>
       </div>
     </div>
     <!-- Page content here -->
-    <div class="flex flex-col">
-  <div class="overflow-x-auto p-16 sm:-mx-6 lg:-mx-8">
-    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <table class="min-w-full">
-          <thead class="border-b">
-            <tr>
-              <th scope="col" class="text-sm font-medium text-green-400 px-6 py-4 text-left">
-                #
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                First
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Last
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Handle
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Mark
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Otto
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @mdo
-              </td>
-            </tr>
-            <tr class="bg-white border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Jacob
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Thornton
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @fat
-              </td>
-            </tr>
-            <tr class="bg-white border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Larry
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Wild
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @twitter
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+    <div class="overflow-x-auto p-8">
+  <table class="table table-compact w-96">
+    <thead>
+      <tr>
+        <th></th> 
+        <th>Name</th> 
+        <th>Job</th> 
+        <th>company</th> 
+        <th>location</th> 
+        <th>Last Login</th> 
+        <th>Favorite Color</th>
+      </tr>
+    </thead> 
+    <tbody>
+      <tr>
+        <th>📚</th> 
+        <td>Cy Ganderton</td> 
+        <td>Quality Control Specialist</td> 
+        <td>Littel, Schaden and Vandervort</td> 
+        <td>Canada</td> 
+        <td>12/16/2020</td> 
+        <td>Blue</td>
+      </tr>
+      <tr>
+        <th>📚</th> 
+        <td>Hart Hagerty</td> 
+        <td>Desktop Support Technician</td> 
+        <td>Zemlak, Daniel and Leannon</td> 
+        <td>United States</td> 
+        <td>12/5/2020</td> 
+        <td>Purple</td>
+      </tr>
+      <tr>
+        <th>📚</th> 
+        <td>Brice Swyre</td> 
+        <td>Tax Accountant</td> 
+        <td>Carroll Group</td> 
+        <td>China</td> 
+        <td>8/15/2020</td> 
+        <td>Red</td>
+      </tr>
+      <tr>
+        <th>📚</th> 
+        <td>Marjy Ferencz</td> 
+        <td>Office Assistant I</td> 
+        <td>Rowe-Schoen</td> 
+        <td>Russia</td> 
+        <td>3/25/2021</td> 
+        <td>Crimson</td>
+      </tr>
+      <tr>
+        <th>📚</th> 
+        <td>Yancy Tear</td> 
+        <td>Community Outreach Specialist</td> 
+        <td>Wyman-Ledner</td> 
+        <td>Brazil</td> 
+        <td>5/22/2020</td> 
+        <td>Indigo</td>
+      </tr>
+      <tr>
+        <th>📚</th> 
+        <td>Irma Vasilik</td> 
+        <td>Editor</td> 
+        <td>Wiza, Bins and Emard</td> 
+        <td>Venezuela</td> 
+        <td>12/8/2020</td> 
+        <td>Purple</td>
+      </tr>
+    </tbody> 
+    <tfoot>
+      <tr>
+        <th>📑</th> 
+        <th>Name</th> 
+        <th>Job</th> 
+        <th>company</th> 
+        <th>location</th> 
+        <th>Last Login</th> 
+        <th>Favorite Color</th>
+      </tr>
+    </tfoot>
+  </table>
 </div>
+</footer>
     <%= yield %>
   </div> 
   <div class="drawer-side">
     <label for="my-drawer-3" class="drawer-overlay"></label> 
     <ul class="menu p-4 w-80 bg-base-100">
       <!-- Sidebar content here -->
+      <li class="px-8"><a><div class="flex-1 p-2 mx-2"><h1 class="text-2xl decoration-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-600">
+    REAMER
+  </h1></div></a></li>
       <li><a><i class="bi bi-search"></i>Browse files</a></li>
           <li><a><i class="bi bi-tag"></i>Tags</a></li>
+          <li><a><i class="bi bi-trash"></i>Trash</a></li>
           <li><a><i class="bi bi-upload"></i>Upload files</a></li>
           <li><i class="bi bi-box-arrow-right"><%= button_to "Sign out", destroy_user_session_path, :method => :delete %></i></li>
           <li>
@@ -132,7 +156,11 @@
     
   </div>
 </div>
-
+<footer class="footer footer-center p-4 bg-base-300 text-base-content">
+  <div>
+    <p>Copyright © 2023 - AM Sahil</p>
+  </div>
+</footer>
 <% else %>
  <%= yield %>
     <% end %>

@@ -1,26 +1,28 @@
-<h2>Log in</h2>
-
+<div class="flex items-center justify-center h-screen">
+<div class=" border rounded-md m-4 p-4">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, {class: "badge badge-accent badge-outline" } %><br />
+    <%= f.email_field :email, { class: "m-4 input input-bordered input-accent w-64" }%>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password, {class: "badge badge-accent badge-outline" } %><br />
+    <%= f.password_field :password, { class: " m-4 input input-bordered input-accent w-64" } %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.check_box :remember_me, {class: "checkbox checkbox-accent" } %>
+      <%= f.label :remember_me, {class: "p-2 m-2 badge badge-accent badge-outline" } %>
     </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", {class: "container btn btn-active btn-accent" } %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>

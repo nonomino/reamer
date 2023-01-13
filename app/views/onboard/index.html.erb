@@ -1,20 +1,42 @@
 <% if !user_signed_in? %>
-<div class="bg-gradient-to-r from-gray-100 to-gray-300 shadow-md rounded p-4 m-64 flex flex-col">
-    <div class="mb-4">
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Username">
+<header>
+  <div
+    class="p-12 text-center relative overflow-hidden bg-no-repeat bg-cover h-96 lg:h-screen"
+    style="background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1080')"
+  >
+    <div
+      class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+      style="background-color: rgba(2, 56, 53, 0.7)"
+    >
+      <div class="flex justify-center items-center h-full">
+        <div class="text-white">
+          <div class="flex-1 px-2 mx-2"><h1 class="text-6xl decoration-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+    REAMER
+  </h1></div>
+          <h4 class="font-semibold text-xl mb-6">
+            Your documents' best friend.
+          </h4>
+          <a
+            class="inline-block px-8 py-3 mx-6 mb-1 border-2 border-gray-200 text-gray-200 font-medium text-sm leading-snug uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+            href="/users/sign_in"
+            role="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            >Log In</a
+          >
+          <a
+            class="inline-block px-7 py-3 mb-1 border-2 border-gray-200 text-gray-200 font-medium text-sm leading-snug uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+            href="/users/sign_up"
+            role="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            >Sign up</a
+          >
+        </div>
+      </div>
     </div>
-    <div class="mb-6">
-      <input class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="password" type="password" placeholder="Enter password">
-    </div>
-    <div class="flex items-center justify-between">
-      <button class="bg-blue-600 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" type="button">
-        Sign In
-      </button>
-      <a class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" href="/users/sign_up">
-        New User?
-      </a>
-    </div>
-</div>
+  </div>
+  <!-- Background image -->
+</header>
 <% else %>
-Wooh! Logged in!
 <% end%>
