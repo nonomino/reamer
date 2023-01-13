@@ -1,0 +1,27 @@
+<%= form_with(model: obj_type) do |form| %>
+  <% if obj_type.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(obj_type.errors.count, "error") %> prohibited this obj_type from being saved:</h2>
+
+      <ul>
+        <% obj_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :max_length, style: "display: block" %>
+    <%= form.number_field :max_length %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

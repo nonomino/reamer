@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @obj_type %>
+
+<div>
+  <%= link_to "Edit this obj type", edit_obj_type_path(@obj_type) %> |
+  <%= link_to "Back to obj types", obj_types_path %>
+
+  <%= button_to "Destroy this obj type", @obj_type, method: :delete %>
+</div>
