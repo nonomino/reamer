@@ -1,4 +1,4 @@
 class Folder < ApplicationRecord
-  belongs_to :user
-  has_many :files
+  has_many :documents
+  accepts_nested_attributes_for :documents
 end
