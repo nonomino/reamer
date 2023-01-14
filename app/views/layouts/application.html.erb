@@ -24,7 +24,7 @@
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
     <div class="w-full navbar bg-base-400">
-      <div class="flex-none lg:hidden">
+      <div class="flex-none">
         <label for="my-drawer-3" class="btn btn-square btn-ghost">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </label>
@@ -40,89 +40,7 @@
       </div>
     </div>
     <!-- Page content here -->
-    <div class="overflow-x-auto p-8">
-  <table class="table table-compact w-96">
-    <thead>
-      <tr>
-        <th></th> 
-        <th>Name</th> 
-        <th>Job</th> 
-        <th>company</th> 
-        <th>location</th> 
-        <th>Last Login</th> 
-        <th>Favorite Color</th>
-      </tr>
-    </thead> 
-    <tbody>
-      <tr>
-        <th>📚</th> 
-        <td>Cy Ganderton</td> 
-        <td>Quality Control Specialist</td> 
-        <td>Littel, Schaden and Vandervort</td> 
-        <td>Canada</td> 
-        <td>12/16/2020</td> 
-        <td>Blue</td>
-      </tr>
-      <tr>
-        <th>📚</th> 
-        <td>Hart Hagerty</td> 
-        <td>Desktop Support Technician</td> 
-        <td>Zemlak, Daniel and Leannon</td> 
-        <td>United States</td> 
-        <td>12/5/2020</td> 
-        <td>Purple</td>
-      </tr>
-      <tr>
-        <th>📚</th> 
-        <td>Brice Swyre</td> 
-        <td>Tax Accountant</td> 
-        <td>Carroll Group</td> 
-        <td>China</td> 
-        <td>8/15/2020</td> 
-        <td>Red</td>
-      </tr>
-      <tr>
-        <th>📚</th> 
-        <td>Marjy Ferencz</td> 
-        <td>Office Assistant I</td> 
-        <td>Rowe-Schoen</td> 
-        <td>Russia</td> 
-        <td>3/25/2021</td> 
-        <td>Crimson</td>
-      </tr>
-      <tr>
-        <th>📚</th> 
-        <td>Yancy Tear</td> 
-        <td>Community Outreach Specialist</td> 
-        <td>Wyman-Ledner</td> 
-        <td>Brazil</td> 
-        <td>5/22/2020</td> 
-        <td>Indigo</td>
-      </tr>
-      <tr>
-        <th>📚</th> 
-        <td>Irma Vasilik</td> 
-        <td>Editor</td> 
-        <td>Wiza, Bins and Emard</td> 
-        <td>Venezuela</td> 
-        <td>12/8/2020</td> 
-        <td>Purple</td>
-      </tr>
-    </tbody> 
-    <tfoot>
-      <tr>
-        <th>📑</th> 
-        <th>Name</th> 
-        <th>Job</th> 
-        <th>company</th> 
-        <th>location</th> 
-        <th>Last Login</th> 
-        <th>Favorite Color</th>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-</footer>
+    
     <%= yield %>
   </div> 
   <div class="drawer-side">
@@ -135,7 +53,7 @@
       <li><a><i class="bi bi-search"></i>Browse files</a></li>
           <li><a><i class="bi bi-tag"></i>Tags</a></li>
           <li><a><i class="bi bi-trash"></i>Trash</a></li>
-          <li><a><i class="bi bi-upload"></i>Upload files</a></li>
+          <li><%= link_to "Upload document", new_document_path, class: "bi bi-upload" %></li>
           <li><i class="bi bi-box-arrow-right"><%= button_to "Sign out", destroy_user_session_path, :method => :delete %></i></li>
           <li>
          <div class="relative rounded-2sm bg-base-300 px-6 pt-10 pb-8 shadow-sm ring-1 ring-gray-300/5 sm:mx-auto sm:max-w-lg sm:px-4">

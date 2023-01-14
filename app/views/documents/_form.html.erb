@@ -10,8 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+<%= form.text_field :title %>  
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create new document", {class: "btn btn-accent"}%>
   </div>
 <% end %>
