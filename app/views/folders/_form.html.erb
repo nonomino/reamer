@@ -24,7 +24,7 @@
 
 
 <%= form_for @folder do |form| %>
-    <%= form.text_field :name %>
+    <%= form.select :name, options_for_select(Folder.all.map { |u| [u.id] }) %>
    <%= form.fields_for :documents do |doc_subform| %>
    <%=  doc_subform.text_field :title %>
    <% end %>
