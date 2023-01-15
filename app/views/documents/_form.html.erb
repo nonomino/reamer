@@ -22,6 +22,7 @@
 
 <%= simple_form_for @document do |f| %>
   <%= f.input :title%>
-  <%= f.association :folder%>
+  <%= f.input :description%>
+  <%= f.association :tag%>
   <%= f.button :submit %>
 <% end %>
