@@ -13,8 +13,6 @@ class FoldersController < ApplicationController
   # GET /folders/new
   def new
     @folder = Folder.new
-    documents = @folder.documents.build
-    documents.tags.build
   end
 
   # GET /folders/1/edit

@@ -12,6 +12,7 @@ class DocumentsController < ApplicationController
 
   # GET /documents/new
   def new
+    #@folder = Folder.find_by
     @document = Document.new
   end
 
@@ -21,7 +22,9 @@ class DocumentsController < ApplicationController
 
   # POST /documents or /documents.json
   def create
-    @document = Document.new(document_params)
+    @folder = Folder.find params[:folder_id]
+    # @document = Document.new(document_params)
+    @document = @folder.build params[:document] 
 
     respond_to do |format|
       if @document.save
@@ -66,6 +69,6 @@ class DocumentsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def document_params
       #params.fetch(:document, {})
-      params.require(:document).permit(:title)
+      params.require(:document).permit(:title, )
     end
 end
