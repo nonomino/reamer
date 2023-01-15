@@ -12,12 +12,13 @@
   <% end %>
   <%= form.hidden_field :folder_id , :value=>params[:folder_id] %>
 <%= form.text_field :title %>
-<%= form.select :folder_id, options_for_select(Folder.all.map{|s|[s.name, s.id]}) %>
+<!-- <%= form.select :folder_id, options_for_select(Folder.all.map{|s|[s.name, s.id]}) %>
+<%= form.collection_select(:folder_id, Folder.all, :id, :name) %>
   <div>
     <%= form.submit "Create new document", {class: "btn btn-accent"}%>
   </div>
 <% end %>
--->
+
 
 
 <%= simple_form_for @document do |f| %>
@@ -26,3 +27,18 @@
   <%= f.association :folder%>
   <%= f.button :submit %>
 <% end %>
+
+-->
+
+
+
+
+
+<%= form_for @document do |form| %>
+    <%= form.text_field :title %>
+   <%= form.fields_for :folder do |folder_subform| %>
+   <%=  folder_subform.text_field :name %>
+   <% end %>
+   <%= form.submit "Create"%>
+<% end %>
+

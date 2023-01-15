@@ -13,6 +13,7 @@ class FoldersController < ApplicationController
   # GET /folders/new
   def new
     @folder = Folder.new
+    @folder.documents.build
   end
 
   # GET /folders/1/edit
@@ -65,6 +66,6 @@ class FoldersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def folder_params
-      params.require(:folder).permit(:id, :name, documents_attributes: [:id, :title, :description])
+      params.require(:folder).permit(:name, documents_attributes: [:title])
     end
 end

@@ -1,4 +1,4 @@
-<%= form_with(model: folder) do |form| %>
+<!-- <%= form_with(model: folder) do |form| %>
   <% if folder.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
@@ -19,4 +19,14 @@
   <div>
     <%= form.submit %>
   </div>
+<% end %>
+-->
+
+
+<%= form_for @folder do |form| %>
+    <%= form.text_field :name %>
+   <%= form.fields_for :documents do |doc_subform| %>
+   <%=  doc_subform.text_field :title %>
+   <% end %>
+   <%= form.submit "Create"%>
 <% end %>

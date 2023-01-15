@@ -1,9 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<h1> My Documents</h1>
-
 <div id="documents">
+<div class="p-16 overflow-x-auto">
+  <table class="table table-compact w-full">
+    <thead>
+      <tr>
+        <th></th> 
+        <th>Title</th> 
+        <th>Description</th> 
+        <th>Folder</th> 
+        <th>Type</th> 
+        <th>Details</th> 
+        <th>Delete</th>
+      </tr>
+    </thead> 
+    <tbody>
   <% @documents.each do |document| %>
-    <%= render document %>
+  <div id="<%= dom_id document %>">
+
+      <tr>
+        <th><%= document.id %></th> 
+        <td><%= document.title %></td> 
+        <td><%= document.description %></td> 
+        <td>Littel, Schaden and Vandervort</td> 
+        <td>Canada</td> 
+        <td>12/16/2020</td> 
+        <td>Blue</td>
+      </tr>
   <% end %>
+      </tbody> 
+  </table>
+</div>
+</div>
 </div>
