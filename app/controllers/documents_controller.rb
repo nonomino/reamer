@@ -12,7 +12,6 @@ class DocumentsController < ApplicationController
 
   # GET /documents/new
   def new
-    #@folder = Folder.find_by
     @document = Document.new
   end
 
