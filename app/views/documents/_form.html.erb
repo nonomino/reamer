@@ -36,8 +36,9 @@
 
 <%= form_for @document do |form| %>
     <%= form.text_field :title %>
+    <%= form.file_field :file%>
    <%= form.fields_for :folder do |folder_subform| %>
-   <%=  folder_subform.text_field :name %>
+    <%= folder_subform.select :name, options_for_select(Folder.all.map { |u| [u.name] }) %>
    <% end %>
    <%= form.submit "Create"%>
 <% end %>
