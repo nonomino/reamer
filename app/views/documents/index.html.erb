@@ -22,14 +22,13 @@
         <th><%= document.id %></th> 
         <td><%= document.title %></td> 
         <td><%= document.description %></td> 
-        <td>Littel, Schaden and Vandervort</td> 
-        <td>Canada</td> 
-        <td>12/16/2020</td> 
-        <td>Blue</td>
+        <td><%= Folder.where(:id => document.folder_id).pluck(:name).to_s%></td> 
+        <td>TYPE</td> 
+        <td>View Details</td> 
+        <td>Delete</td>
       </tr>
   <% end %>
       </tbody> 
   </table>
-</div>
 </div>
 </div>

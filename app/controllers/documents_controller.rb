@@ -7,6 +7,12 @@ class DocumentsController < ApplicationController
   end
   def new
     @document = Document.new
+   # @folder = Folder.folder
+    #@document.folders.build
+  #  if params[:folder_id]
+    #  @current_folder = Folder.find(params[:folder_id])  
+     # @document.folder_id = @current_folder.id
+   # end
   end
   def edit
   end
@@ -50,7 +56,6 @@ class DocumentsController < ApplicationController
       #params.require(:document).permit(:document_id, :title, :description, :folder_id, :name)
       params
     .require(:document)
-    .permit(:title, :file,
-            folder_attributes: [:id, :name])
+    .permit(:title, :file, :folder_id)
     end
 end

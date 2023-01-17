@@ -18,28 +18,25 @@
     <%= form.submit "Create new document", {class: "btn btn-accent"}%>
   </div>
 <% end %>
-
-
-
-<%= simple_form_for @document do |f| %>
-  <%= f.input :title%>
-  <%= f.input :description%>
-  <%= f.association :folder%>
-  <%= f.button :submit %>
-<% end %>
-
 -->
 
 
+<%= form_with(model: document) do |form| %>
+<% if document.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(document.errors.count, "error") %> prohibited this document from being saved:</h2>
 
-
-
-<%= form_for @document do |form| %>
+      <ul>
+        <% document.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <% %>
     <%= form.text_field :title %>
+    <%= form.text_field :folder_id %>
     <%= form.file_field :file%>
-   <%= form.fields_for :folder do |folder_subform| %>
-    <%= folder_subform.select :name, options_for_select(Folder.all.map { |u| [u.name] }) %>
-   <% end %>
+   
    <%= form.submit "Create"%>
 <% end %>
-
