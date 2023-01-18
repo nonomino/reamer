@@ -37,6 +37,14 @@
     <%= form.text_field :title %>
     <%= form.text_field :folder_id %>
     <%= form.file_field :file%>
-   
+   <div class="field">
+    <%= form.label :document_tag_id %>
+    <%= form.collection_select(:document_tag_id, DocumentTags.all, :id, :tag) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_tag %>
+    <%= collection_check_boxes(:document, :tag_ids, Tag.all, :id, :tag) %>
+  </div>
    <%= form.submit "Create"%>
 <% end %>
