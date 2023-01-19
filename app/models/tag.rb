@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-    # belongs_to :document
+    has_and_belongs_to_many :document
 end
