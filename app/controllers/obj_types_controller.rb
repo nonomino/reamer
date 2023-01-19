@@ -65,6 +65,6 @@ class ObjTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def obj_type_params
-      params.require(:obj_type).permit(:type, :max_length)
+      params.require(:obj_type).permit(:doctype, :max_length)
     end
 end

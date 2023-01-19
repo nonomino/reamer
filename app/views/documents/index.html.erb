@@ -24,13 +24,39 @@
         <td><%= document.title %></td> 
         <td><%= document.description %></td> 
         <td><%= (Folder.where(:id => document.folder_id).pluck(:name)).to_s %></td> 
-        <td>TYPE</td> 
-        <td>TAGS</td>
+        <td><%= ObjType.where(:id => document.obj_type_id).pluck(:doctype).to_s%></td> 
+        <td><%= Tag.where(:id => document.tag_id).pluck(:tag).to_s%></td>
         <td>View Details</td> 
         <td>Delete</td>
       </tr>
+     </div>
   <% end %>
       </tbody> 
+  </table>
+</div>
+</div>
+
+<div id="folders">
+<div class="p-16 overflow-x-auto">
+<table class="table table-compact w-full">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th> 
+      </tr>
+    </thead> 
+    <tbody>
+<% @folders = Folder.all%>
+  <% @folders.each do |folder| %>
+  <div id="<%= dom_id folder %>">
+
+      <tr>
+        <th><%= folder.id %></th> 
+        <td><%= folder.name %></td>
+      </tr>
+     </div>
+  <% end %>
+  </tbody> 
   </table>
 </div>
 </div>

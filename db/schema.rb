@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_18_130519) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_18_132130) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -46,7 +46,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_130519) do
     t.text "description"
     t.integer "folder_id"
     t.integer "tag_id"
+    t.integer "obj_type_id"
     t.index ["folder_id"], name: "index_documents_on_folder_id"
+    t.index ["obj_type_id"], name: "index_documents_on_obj_type_id"
     t.index ["tag_id"], name: "index_documents_on_tag_id"
   end
 
@@ -66,7 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_130519) do
   end
 
   create_table "obj_types", force: :cascade do |t|
-    t.string "type"
+    t.string "doctype"
     t.integer "max_length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -93,6 +95,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_130519) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "documents", "folders"
+  add_foreign_key "documents", "obj_types"
   add_foreign_key "documents", "tags"
   add_foreign_key "documents_tags", "documents", column: "documents_id"
   add_foreign_key "folders", "documents"

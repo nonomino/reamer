@@ -17,8 +17,8 @@ class DocumentsController < ApplicationController
   def edit
   end
   def create
-    @document = Document.new(document_params)
-    @document.file.attach(params[:file])
+    @document = Document.create!(document_params)
+    # @document.file.attach(params[:file])
     respond_to do |format|
       if @document.save
         format.html { redirect_to document_url(@document), notice: "Document was successfully created." }
@@ -56,6 +56,6 @@ class DocumentsController < ApplicationController
       #params.require(:document).permit(:document_id, :title, :description, :folder_id, :name)
       params
     .require(:document)
-    .permit(:title, :file, :folder_id, :document_tag_id, {:tag_ids=>[]})
+    .permit(:title, :file, :folder_id, :tag_id, :obj_type_id)
     end
 end
