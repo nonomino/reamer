@@ -35,12 +35,12 @@
       <div class="flex-none lg:block">
         <ul class="menu menu-horizontal">
           <!-- Navbar menu content here -->
-          	
+          <%= link_to "", "/documents", class: "bi bi-person-fill p-2" %>
+          	<%= link_to "", "/documents", class: "bi bi-search p-2" %>
         </ul>
       </div>
     </div>
     <!-- Page content here -->
-    
     <%= yield %>
   </div> 
   <div class="drawer-side">
@@ -50,27 +50,11 @@
       <li class="px-8"><a><div class="flex-1 p-2 mx-2"><h1 class="text-2xl decoration-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-600">
     REAMER
   </h1></div></a></li>
-      <li><a><i class="bi bi-search"></i>Browse files</a></li>
-          <li><a><i class="bi bi-tag"></i>Tags</a></li>
+      <li><%= link_to "Browse files", "/documents", class: "bi bi-search" %></li>
+          <li><%= link_to "Tags", tags_path, class: "bi bi-tag" %></li>
           <li><a><i class="bi bi-trash"></i>Trash</a></li>
           <li><%= link_to "Upload document", new_document_path, class: "bi bi-upload" %></li>
           <li><i class="bi bi-box-arrow-right"><%= button_to "Sign out", destroy_user_session_path, :method => :delete %></i></li>
-          <li>
-         <div class="relative rounded-2sm bg-base-300 px-6 pt-10 pb-8 shadow-sm ring-1 ring-gray-300/5 sm:mx-auto sm:max-w-lg sm:px-4">
-    <div class="mx-4 max-w-md">
-
-
-      <form action="" class="relative mx-auto w-max">
-        <input type="search" 
-              class="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-16 focus:pr-4" />
-        <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-4 w-8 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </form>
-    </div>
-  </div>
-</li>
-      
     </ul>
     
   </div>

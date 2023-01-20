@@ -1,5 +1,14 @@
 <p style="color: green"><%= notice %></p>
+<div id="folders">
+<div class="p-16 overflow-x-auto">
+<table class="table table-compact w-full">
+    
+    <tbody>
 
+  </tbody> 
+  </table>
+</div>
+</div>
 <div id="documents">
 <div class="p-16 overflow-x-auto">
   <table class="table table-compact w-full">
@@ -16,11 +25,27 @@
       </tr>
     </thead> 
     <tbody>
+    <% @folders = Folder.all%>
+  <% @folders.each do |folder| %>
+  <div id="<%= dom_id folder %>">
+
+      <tr>
+        <th>📂</th> 
+        <td><%= folder.name %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+     </div>
+  <% end %>
   <% @documents.each do |document| %>
   <div id="<%= dom_id document %>">
 
       <tr>
-        <th><%= document.id %></th> 
+        <th>📑</th> 
         <td><%= document.title %></td> 
         <td><%= document.description %></td> 
         <td><%= (Folder.where(:id => document.folder_id).pluck(:name)).to_s %></td> 
@@ -31,32 +56,8 @@
       </tr>
      </div>
   <% end %>
+  
       </tbody> 
-  </table>
-</div>
-</div>
-
-<div id="folders">
-<div class="p-16 overflow-x-auto">
-<table class="table table-compact w-full">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th> 
-      </tr>
-    </thead> 
-    <tbody>
-<% @folders = Folder.all%>
-  <% @folders.each do |folder| %>
-  <div id="<%= dom_id folder %>">
-
-      <tr>
-        <th><%= folder.id %></th> 
-        <td><%= folder.name %></td>
-      </tr>
-     </div>
-  <% end %>
-  </tbody> 
   </table>
 </div>
 </div>

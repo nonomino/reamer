@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_18_132130) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_20_121819) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_132130) do
     t.integer "folder_id"
     t.integer "tag_id"
     t.integer "obj_type_id"
+    t.datetime "deleted_at", precision: nil
     t.index ["folder_id"], name: "index_documents_on_folder_id"
     t.index ["obj_type_id"], name: "index_documents_on_obj_type_id"
     t.index ["tag_id"], name: "index_documents_on_tag_id"

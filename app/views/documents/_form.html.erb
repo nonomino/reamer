@@ -10,12 +10,37 @@
       </ul>
     </div>
   <% end %>
-    <% %>
-    <%= form.text_field :title %>
-    <%= form.text_field :folder_id %>
-    <%= form.text_field :tag_id %>
-    <%= form.text_field :obj_type_id %>
-    <%= form.file_field :file %>
-   
-   <%= form.submit "Create"%>
+  <div class="p-64">
+  <div class="border rounded-md m-4 p-4 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black">
+  <div class="inline-block justify-center w-max mx-32 my-4">
+<h1 class="badge badge-accent badge-outline">Create a new Document</h1>
+</div>
+    <% @folders = Folder.all; @tags = Tag.all; @objts = ObjType.all; %>
+    <%= form.label :title, {class: "badge badge-accent badge-outline w-max" } %><br />
+    <div class="p-2 inline-block justify-center ">
+    <%= form.text_field :title, { class: "p-2 input input-bordered input-accent" }%>
+    </div><br>
+    <%= form.label :description, {class: "badge badge-accent badge-outline w-max" } %><br />
+    <div class="p-2 inline-block justify-center ">
+    <%= form.text_area :description, { class: "p-2 input input-bordered input-accent" }%>
+    </div><br>
+    <%= form.label "Select Folder", {class: "badge badge-accent badge-outline" } %><br/>
+    <div class="p-2 inline-block justify-center ">
+    <%= form.select :folder_id, options_for_select(@folders.collect { | folder | [folder.name, folder.id] })%><br>
+    </div><br>
+    <%= form.label "Select tag to add", {class: "badge badge-accent badge-outline" } %><br />
+    <div class="p-2 inline-block justify-center ">
+    <%= form.select :tag_id, options_for_select(@tags.collect { | folder | [folder.tag, folder.id] }), {}, {} %><br>
+    </div><br>
+    <%= form.label "Select File Type", {class: "badge badge-accent badge-outline" } %><br />
+    <div class="p-2 inline-block justify-center ">
+    <%= form.select :obj_type_id, options_for_select(@objts.collect { | folder | [folder.doctype, folder.id] })%><br>
+    </div><br>
+    <div class="p-2 inline-block justify-center ">
+    <%= form.file_field :file, { class: "form-control px-3 py-1.5 text-base font-normal text-white-700 bg-gray-900 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0" }%><br>
+    </div><br>
+   <%= form.submit "Upload new file", {class: "px-4 btn btn-active btn-accent" } %><br>
+   <%= link_to "Back to My Documents", documents_path %>
+   </div>
+   </div>
 <% end %>
