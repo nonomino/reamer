@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_20_121819) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_26_083432) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_121819) do
     t.index ["document_id"], name: "index_folders_on_document_id"
   end
 
-  create_table "obj_types", force: :cascade do |t|
+  create_table "obj_categories", force: :cascade do |t|
     t.string "doctype"
     t.integer "max_length"
     t.datetime "created_at", null: false
@@ -96,7 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_121819) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "documents", "folders"
-  add_foreign_key "documents", "obj_types"
+  add_foreign_key "documents", "obj_categories", column: "obj_type_id"
   add_foreign_key "documents", "tags"
   add_foreign_key "documents_tags", "documents", column: "documents_id"
   add_foreign_key "folders", "documents"
