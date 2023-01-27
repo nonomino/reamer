@@ -1,10 +1,33 @@
 <p style="color: green"><%= notice %></p>
+<h2 class="pt-6 pb-6 px-96 bg-gray-900"> Documents in this folder </h2>
+<div id="documents">
+<div class="p-16 overflow-x-auto">
+  <table class="table table-compact w-full">
+    <thead>
+      <tr>
+        <th>📑</th> 
+        <th>Title</th> 
+        <th>Description</th> 
+        <th>Edit</th> 
+        <th>Delete</th> 
+      </tr>
+    </thead> 
+    <tbody>
+  <%@fols =  Document.where(:folder_id => params[:id]) %>
+<% @fols.each do |fol| %>
+  <div id="<%= dom_id fol%>">
 
-<%= render @folder %>
-<% @doc = Document.all %>
-<div>
-  <%= link_to "Edit this folder", edit_folder_path(@folder) %> |
-  <%= link_to "Back to folders", folders_path %>
-<%= Document.where(:folder_id => params[:id]).pluck(:title) %>
-  <%= button_to "Destroy this folder", @folder, method: :delete %>
+      <tr>
+        <th>📑</th> 
+        <td><%= fol.title %></td> 
+        <td><%= fol.description %></td> 
+        <td><%= link_to "Edit document", edit_document_path(fol.id)%></td> 
+        <td><%= button_to "Delete document", fol, method: :delete %></td> 
+      </tr>
+     </div>
+  <% end %>
+  
+      </tbody> 
+  </table>
+</div>
 </div>

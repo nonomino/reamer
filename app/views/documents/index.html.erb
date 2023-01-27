@@ -31,19 +31,20 @@
 
       <tr>
         <th>📂</th> 
-        <td><%= folder.name %></td>
+        <td><%= link_to folder.name, folder%></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td><%= link_to "View Details", edit_folder_path(folder) %></td>
         <td></td>
       </tr>
      </div>
   <% end %>
   <% @documents.each do |document| %>
   <div id="<%= dom_id document %>">
-
+<% @root = Folder.where(:id => 1).pluck(:id)%>
+<% if @root.include? document.folder_id%>
       <tr>
         <th>📑</th> 
         <td><%= document.title %></td> 
@@ -54,6 +55,7 @@
         <td>View Details</td> 
         <td>Delete</td>
       </tr>
+   <% end %>
      </div>
   <% end %>
   

@@ -12,3 +12,33 @@
 </div>
 
 <%= link_to "New folder", new_folder_path %>
+
+<div id="documents">
+<div class="p-16 overflow-x-auto">
+  <table class="table table-compact w-full">
+    <thead>
+      <tr>
+        <th></th> 
+        <th>Title</th> 
+        <th>Description</th> 
+        <th>Folder</th> 
+      </tr>
+    </thead> 
+    <tbody>
+    
+  <% @documents = Document.all; @documents.each do |document| %>
+  <div id="<%= dom_id document %>">
+
+      <tr>
+        <th>📂</th> 
+        <td><%= document.title %></td> 
+        <td><%= document.description %></td> 
+        <td><%= (Folder.where(:id => document.folder_id).pluck(:name)).to_s %></td> 
+      </tr>
+     </div>
+  <% end %>
+  
+      </tbody> 
+  </table>
+</div>
+</div>
