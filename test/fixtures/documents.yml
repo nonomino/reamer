@@ -9,3 +9,9 @@ one:
   description: Trying out  a test
   folder_id: 3
   obj_type_id: 1
+two:
+  title: Image200
+  description: Testing another one
+  folder_id: 4
+  obj_type_id: 1
+  tag_id: 3
