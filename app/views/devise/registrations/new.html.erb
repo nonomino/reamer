@@ -5,24 +5,24 @@
 
   <div class="field">
     <%= f.label :email, {class: "badge badge-accent badge-outline" } %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", { class: "m-4 input input-bordered input-accent w-64" }%>
+    <%= f.email_field :email, { class: "m-4 input input-bordered input-accent w-64" }%>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, {class: "badge badge-accent badge-outline" } %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, { class: "m-4 input input-bordered input-accent w-64" }%>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :password_confirmation, {class: "badge badge-accent badge-outline" } %><br />
+    <%= f.password_field :password_confirmation , { class: "m-4 input input-bordered input-accent w-64" }%>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", {class: "container btn btn-active btn-accent" } %>
   </div>
 <% end %>
 

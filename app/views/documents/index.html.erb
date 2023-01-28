@@ -16,7 +16,6 @@
       <tr>
         <th></th> 
         <th>Title</th> 
-        <th>Description</th> 
         <th>Folder</th> 
         <th>Type</th> 
         <th>Tags</th>
@@ -32,12 +31,11 @@
       <tr>
         <th>📂</th> 
         <td><%= link_to folder.name, folder%></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>TRUE</td>
+        <td>File folder</td>
+        <td>None</td>
         <td><%= link_to "View Details", edit_folder_path(folder) %></td>
-        <td></td>
+        <td>Delete</td>
       </tr>
      </div>
   <% end %>
@@ -47,8 +45,9 @@
 <% if @root.include? document.folder_id%>
       <tr>
         <th>📑</th> 
-        <td><%= document.title %></td> 
-        <td><%= document.description %></td> 
+        <td><%= link_to document.title, "#"%></td> 
+        <!-- <td><%= document.description %></td>  
+        -->
         <td><%= (Folder.where(:id => document.folder_id).pluck(:name)).to_s %></td> 
         <td><%= ObjType.where(:id => document.obj_type_id).pluck(:doctype).to_s%></td> 
         <td><%= Tag.where(:id => document.tag_id).pluck(:tag).to_s%></td>
