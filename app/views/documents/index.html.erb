@@ -49,7 +49,7 @@
         <!-- <td><%= document.description %></td>  
         -->
         <td><%= (Folder.where(:id => document.folder_id).pluck(:name)).to_s %></td> 
-        <td><%= ObjType.where(:id => document.obj_type_id).pluck(:doctype).to_s%><%= document.file.source_blob.content_type %></td> 
+        <td><%= ObjType.where(:id => document.obj_type_id).pluck(:doctype).to_s%></td> 
         <td><%= Tag.where(:id => document.tag_id).pluck(:tag).to_s%></td>
         <td>View Details</td> 
         <td><%= button_to "Delete", document, method: :delete %></td>
