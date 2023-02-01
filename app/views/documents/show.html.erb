@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @document %>
+<div class="p-64">
 <%= image_tag @document.file, :style => "max-height:300px; max-width:300px;"%>
-<div>
-  <%= link_to "Edit this document", edit_document_path(@document) %> |
-  <%= link_to "Back to documents", documents_path %>
+<h2 align="center" ><%= @document.title %> </h2>
+<h4><%= @document.description%> </h4>
+ <p> <%= link_to "Edit this document", edit_document_path(@document) %></p>
+ <p> <%= link_to "Back to documents", documents_path %></p>
 
   <%= button_to "Destroy this document", @document, method: :delete %>
 </div>

@@ -1,6 +1,6 @@
-<p style="color: green"><%= notice %></p>
 <div id="folders">
 <div class="p-16 overflow-x-auto">
+<p style="color: green"><%= notice %></p>
 <table class="table table-compact w-full">
     
     <tbody>
@@ -35,7 +35,7 @@
         <td>File folder</td>
         <td>None</td>
         <td><%= link_to "View Details", edit_folder_path(folder) %></td>
-        <td>Delete</td>
+        <td><%= button_to "Delete folder", folder, method: :delete %></td>
       </tr>
      </div>
   <% end %>
@@ -45,14 +45,14 @@
 <% if @root.include? document.folder_id%>
       <tr>
         <th>📑</th> 
-        <td><%= link_to document.title, "#"%></td> 
+        <td><%= link_to document.title, document_path(document)%></td> 
         <!-- <td><%= document.description %></td>  
         -->
         <td><%= (Folder.where(:id => document.folder_id).pluck(:name)).to_s %></td> 
-        <td><%= ObjType.where(:id => document.obj_type_id).pluck(:doctype).to_s%></td> 
+        <td><%= ObjType.where(:id => document.obj_type_id).pluck(:doctype).to_s%><%= document.file.source_blob.content_type %></td> 
         <td><%= Tag.where(:id => document.tag_id).pluck(:tag).to_s%></td>
         <td>View Details</td> 
-        <td>Delete</td>
+        <td><%= button_to "Delete", document, method: :delete %></td>
       </tr>
    <% end %>
      </div>

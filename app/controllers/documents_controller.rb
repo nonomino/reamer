@@ -4,6 +4,9 @@ class DocumentsController < ApplicationController
     @documents = Document.all
   end
   def show
+  rescue ActiveRecord::RecordNotFound
+  flash[:notice] = "Document doesn't exist"
+  redirect_to :action => 'index'
   end
   def new
     @document = Document.new
@@ -43,6 +46,9 @@ class DocumentsController < ApplicationController
   private
     def set_document
       @document = Document.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+  flash[:notice] = "Document doesn't exist"
+  redirect_to :action => 'index'
     end
     
     def document_params

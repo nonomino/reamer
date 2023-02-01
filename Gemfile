@@ -40,3 +40,5 @@ gem "carrierwave", "~> 2.2"
 gem "simple_form", "~> 5.1"
 
 gem "rails-erd", "~> 1.7"
+
+gem "ruby-filemagic", "~> 0.7.3"

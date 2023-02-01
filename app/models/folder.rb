@@ -1,5 +1,5 @@
 class Folder < ApplicationRecord
-  has_many :documents
+  has_many :documents, dependent: :destroy
  accepts_nested_attributes_for :documents
   validates :name, uniqueness: true
   def documents_attributes=(documents_attributes)
